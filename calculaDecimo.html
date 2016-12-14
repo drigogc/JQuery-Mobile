@@ -1,14 +1,12 @@
 <!DOCTYPE html>
-<html >
+<html>
 	<head>
 		<meta charset="UTF-8">
-		
-		<!-- Include meta tag to ensure proper rendering and touch zooming -->
 		<meta name="viewport" content="width=device-width, initial-scale=1">
-		
 		<link rel="stylesheet" href="https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css">
 		
 		<title>Décimo</title>
+		
 		<style>
 			.esconder { display: block; }
 		</style>
@@ -30,15 +28,9 @@
 					<li id="prc2"></li>
 				</ul>
 			</div>
-
-			<!--<div data-role="footer">
-				<h1>Footer</h1>
-			</div>-->
 			
 			<script src="http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
-			
 			<script src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
-			
 			<script src="https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
 			
 			<script>
@@ -63,18 +55,14 @@
 						alert("preencha todos os campos");
 					} else {
 						if($("input").val() != "") {
-						$("#decimo").html("Décimo integral: " + decimo.toFixed(2));
-						$("#prcUnica").html("Parcela única: " + prcUnica.toFixed(2) + "<span style='color: red;'> -8%</span>");
-						$("#prc1").html("Parcela 1: " + prc1.toFixed(2) + "<span style='color: green;'> sem desconto</span>");
-						$("#prc2").html("Parcela 2: " + prc2.toFixed(2) + "<span style='color: red;'> -8%</span>");
-						$("#resultado").attr("style","display: block");
+							$("#decimo").html("Décimo integral: " + decimo.toFixed(2));
+							$("#prcUnica").html("Parcela única: " + prcUnica.toFixed(2) + "<span style='color: red;'> -8%</span>");
+							$("#prc1").html("Parcela 1: " + prc1.toFixed(2) + "<span style='color: green;'> sem desconto</span>");
+							$("#prc2").html("Parcela 2: " + prc2.toFixed(2) + "<span style='color: red;'> -8%</span>");
+							$("#resultado").attr("style","display: block");
 						}
 					}
 				}
-				
-				$(".textinput input").change(function() {
-					$(this).toggleClass("filled");
-				});
 				
 				$("input").on("blur", calcDecimo);
 			</script>
