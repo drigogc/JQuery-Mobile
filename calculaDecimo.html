@@ -14,7 +14,7 @@
 	
 	<body>
 		<div data-role="page" id="pageone">
-			<div data-role="main" class="ui-content">
+			<div id="principal" data-role="main" class="ui-content">
 				<ul data-role="listview" data-inset="true">
 					<li data-role="list-divider" data-theme="b">Cálculo décimo - Sem dependentes</li>
 					<li><label>Salário bruto</label><input type="text" id="salario" placeholder="Salário bruto"/></li>
@@ -35,7 +35,7 @@
 			
 			<script>
 				function calcDecimo() {
-					// Salario bruto;
+					// Salario bruto
 					var salario = parseFloat($("#salario").val());
 					
 					// Meses trabalhados
@@ -44,9 +44,13 @@
 					// Decimo sem desconto
 					var decimo = salario / 12 * meses;
 					
+					// Decimo com desconto
 					var desconto = decimo * 0.08;
 					
+					// Parcela unica
 					var prcUnica = decimo - desconto;
+
+					// Duas parcelas
 					var prc1 = decimo * 0.5;
 					var prc2 = (decimo - desconto * 2) * 0.5;
 					
@@ -55,10 +59,10 @@
 						alert("preencha todos os campos");
 					} else {
 						if($("input").val() != "") {
-							$("#decimo").html("Décimo integral: " + decimo.toFixed(2));
-							$("#prcUnica").html("Parcela única: " + prcUnica.toFixed(2) + "<span style='color: red;'> -8%</span>");
-							$("#prc1").html("Parcela 1: " + prc1.toFixed(2) + "<span style='color: green;'> sem desconto</span>");
-							$("#prc2").html("Parcela 2: " + prc2.toFixed(2) + "<span style='color: red;'> -8%</span>");
+							$("#decimo").append("Décimo integral: " + decimo.toFixed(2));
+							$("#prcUnica").append("Parcela única: " + prcUnica.toFixed(2) + "<span style='color: red;'> -8%</span>");
+							$("#prc1").append("Parcela 1: " + prc1.toFixed(2) + "<span style='color: green;'> sem desconto</span>");
+							$("#prc2").append("Parcela 2: " + prc2.toFixed(2) + "<span style='color: red;'> -8%</span>");
 							$("#resultado").attr("style","display: block");
 						}
 					}
